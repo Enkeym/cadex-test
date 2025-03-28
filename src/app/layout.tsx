@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import React from 'react';
 import './globals.css';
 
@@ -37,8 +38,9 @@ export default function RootLayout({
         <header style={styles.header}>
           <div style={styles.headerContent}>
             <h1 style={{ margin: 0 }}>CADEX Logo</h1>
-            <nav>
-              <a href="/">Главная</a> | <a href="/contact">Contact Us</a>
+            <nav style={styles.nav}>
+              <Link href="/">Главная</Link>
+              <Link href="/contact">Contact Us</Link>
             </nav>
           </div>
         </header>
@@ -71,6 +73,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '0 1rem',
+  },
+  nav: {
+    display: 'flex',
+    gap: '1rem',
+    alignItems: 'center',
   },
   main: {
     maxWidth: '1200px',
